@@ -20,4 +20,9 @@ frame = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CircleShape2D_67jyv")
 
+[node name="Timer" type="Timer" parent="Player"]
+one_shot = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
