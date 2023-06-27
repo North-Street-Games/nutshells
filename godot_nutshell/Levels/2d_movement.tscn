@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciya4tpkd4xad"]
+
+[ext_resource type="Script" path="res://Levels/movement.gd" id="1_pvris"]
+[ext_resource type="Texture2D" uid="uid://dp2odlligrjmh" path="res://Art/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Mob/Snail/all.png" id="2_dtwf3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_67jyv"]
+radius = 21.0
+
+[node name="2d_movement" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_pvris")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_dtwf3")
+hframes = 8
+vframes = 4
+frame = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_67jyv")
+
+[node name="Timer" type="Timer" parent="Player"]
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
