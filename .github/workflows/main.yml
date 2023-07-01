@@ -41,7 +41,7 @@ jobs:
       # uploads to itch.io
       # more info here https://github.com/dulvui/itchio-butler-upload
       - name: Upload to itch.io
-        uses: Kwpa/itchio-butler-upload@v0.0.3
+        uses: Kwpa/itchio-butler-upload@v0.0.4
         with:
           working-directory: html5
           api-key: ${{ secrets.ITCHIO_API_KEY }}
